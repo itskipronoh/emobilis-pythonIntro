@@ -39,3 +39,36 @@ class Vehicle:
         print(f"Brand: {self.brand}")
         print(f"Model: {self.model}")
         print(f"Color: {self.color}")
+
+
+class BankAccount:
+    def __init__(self, account_number, account_holder, balance=0.0):
+        self.account_number = account_number
+        self.account_holder = account_holder
+        self.balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print(f"Deposited: {amount}")
+        else:
+            print("Deposit amount must be positive.")
+
+    def withdrawal(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+            print(f"Withdrew: {amount}")
+        else:
+            print("Invalid withdrawal amount.")
+
+    def apply_bank_fees(self):
+        fee = self.balance * 0.05
+        self.balance -= fee
+        print(f"Bank fees applied: {fee}")
+
+    def display(self):
+        print(f"Account Number: {self.account_number}")
+        print(f"Account Holder: {self.account_holder}")
+        print(f"Balance: {self.balance:.2f}")
+
+

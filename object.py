@@ -2,6 +2,7 @@
 from main import Student
 from main import Person
 from main import Vehicle
+from main import BankAccount
 
 student1 = Student("Alice", 25, 12345)
 student1.display_info()
@@ -47,3 +48,11 @@ rectangle = Rectangle(5, 10)
 print(f"Perimeter: {rectangle.perimeter()}")
 print(f"Area: {rectangle.area()}")
 rectangle.display_dimensions()
+
+
+account = BankAccount(12345, "Alice", 5000)
+account.deposit(500)
+account.withdrawal(200)
+account.apply_bank_fees()
+account.display()# Create a new bank account
+
